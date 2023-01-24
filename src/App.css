@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
+
+body {
+  font-family: 'Press Start 2P', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .container {
+    flex-direction: column;
+  }
+
+  .side {
+    padding-top: 30px;
+  }
+
+  .progress-bar {
+    height: 20px;
+  }
+
+  .face {
+    height: 200px;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0,  -5px); }
+    50%  { transform: translate(0, 5px); }
+    100%   { transform: translate(0, -5px); }   
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 480px) {
+  .side {
+    padding-top: 50px;
+  }
+
+  .progress-bar {
+    height: 35px;
+  }
+
+  .face {
+    height: 400px;
+  }
+
+  .side-content {
+    top: 80px;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: darkslategray;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.spans-sides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.title-sm {
+  font-size: 1.3rem;
+}
+
+.title-md {
+  font-size: 2rem;
+}
+
+.title-lg {
+  font-size: 3rem;
+}
+
+.title-center {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  color: yellow;
+}
+
+#top-title {
+  top: 10px;
+}
+
+#mid-title {
+  bottom: 50%;
+  line-height: 0rem;
+}
+
+#bot-title {
+  bottom: 10px;
+}
+
+.ate-side {
+  flex: 1;
+  background-color: #ab5252;
+}
+
+.ate-title {
+  color: #ffacac;
+}
+
+.long-side {
+  flex: 1;
+  background-color: #4444b5;
+}
+
+.long-title {
+  color: #a1a1ed;
+}
+
+.subtitle { 
+  margin-top: 15px;
+}
+
+.ate-subtitle {
+  animation-name: floating, ate-color-change;
+  animation-duration: 3s, 1s;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal, alternate;
+}
+
+.long-subtitle {
+  animation-name: floating, long-color-change;
+  animation-duration: 3s, 1s;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal, alternate;
+}
+
+@keyframes ate-color-change {
+  from { color: #a0a0a0; }
+  to { color: #dedede; }
+}
+
+@keyframes long-color-change {
+  from { color: #ccdbcc; }
+  to { color: #97af97; }
+}
+
+.progress-bar {
+  width: 80%;
+  background-color: white;
+  border: solid black 3px;
+}
+
+.progress {
+  background-color: #89ff2f;
+  height: 100%;
+}
+
+.progress-header {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
