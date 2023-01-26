@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const APPS_DONE = 0
 const GOAL_APPS = 30
-const API_KEY = 'RGAPI-b459382d-bae7-43c3-a7f1-f2eb0daf586f'
+const API_KEY = 'RGAPI-d433d034-f284-4fae-9da1-1e24c7f504c0'
 
 const RANK_NUM = {
   'I': 1,
